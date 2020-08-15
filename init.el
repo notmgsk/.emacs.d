@@ -58,7 +58,7 @@
   `(let ((tstart (time-to-seconds)))
      (load-relative ,file)
      (message "    ... Completed in %fs"
-	      (- (time-to-seconds) tstart))))
+          (- (time-to-seconds) tstart))))
 
 (setq tab-width 4
       indent-tabs-mode nil)
@@ -88,7 +88,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 (defvar config-load-finish-time (time-to-seconds))
 (message "Took %fs to load init.el" 
