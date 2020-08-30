@@ -7,11 +7,19 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(use-package almost-mono-themes
+;; (use-package almost-mono-themes
+;;   :straight t
+;;   :config
+;;   (load-theme 'almost-mono-black t)
+;;   (load-theme 'almost-mono-white t))
+
+(use-package modus-operandi-theme
   :straight t
   :config
-  (load-theme 'almost-mono-black t)
-  (load-theme 'almost-mono-white t))
+  (load-theme 'modus-operandi t))
+
+(use-package modus-vivendi-theme
+  :straight t)
 
 (use-package rainbow-mode
   :straight t
