@@ -11,8 +11,8 @@
   (defun add-to-keymap (keymap bindings)
     (dolist (binding bindings)
       (define-key keymap
-	(kbd (cl-first binding))
-	(cl-second binding))))
+    (kbd (cl-first binding))
+    (cl-second binding))))
   
   (defun add-to-dk-keymap (bindings)
     (add-to-keymap dk-keymap bindings))
@@ -42,3 +42,6 @@
   :config
   (key-chord-define-global "df" #'undo)
   (key-chord-define-global "jd" #'set-mark-command))
+
+(use-package which-key
+  :straight t)
