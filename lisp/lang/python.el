@@ -1,6 +1,5 @@
 (use-package python
-  :straight t
-  :hook (python-mode . lsp))
+  :straight t)
 
 (use-package pyvenv
   :straight t

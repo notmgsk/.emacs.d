@@ -2,11 +2,8 @@
 (use-package go-mode
   :straight t
   :init
-  (add-to-list 'exec-path (getenv "GOBIN"))
-  :config
-  :hook ((go-mode . lsp)
-         (go-mode . (lambda ()
-                      (add-hook 'before-save-hook 'lsp-format-buffer nil 'local)))))
+  (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+  (add-to-list 'exec-path (getenv "GOBIN")))
 
 (use-package gotest
   :straight t
