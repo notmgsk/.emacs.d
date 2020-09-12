@@ -76,3 +76,7 @@
 (use-package rg
   :straight t
   :commands rg)
+
+(use-package ace-window
+  :straight t
+  :chords (("jw" . ace-window)))
