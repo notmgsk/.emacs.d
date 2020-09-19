@@ -6,12 +6,7 @@
 ;; No clutter. It is a sin to use Emacs with a mouse.
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
-;; (use-package almost-mono-themes
-;;   :straight t
-;;   :config
-;;   (load-theme 'almost-mono-black t)
-;;   (load-theme 'almost-mono-white t))
+(menu-bar-mode -1)
 
 (use-package modus-operandi-theme
   :straight t
