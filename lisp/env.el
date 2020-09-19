@@ -7,7 +7,8 @@
 ;; is in the same directory as the buffer's file). Particularly useful
 ;; on nixos, where tools are not always where you might expect them to
 ;; be (e.g. /usr/local/bin). See
-;; https://github.com/nix-community/nix-direnv for more information.
+;; https://gist.github.com/2eaa5a725ae1890839350ff4030d50c2 for an
+;; example of a nix shell.
 (use-package direnv
   :straight t
   :config
