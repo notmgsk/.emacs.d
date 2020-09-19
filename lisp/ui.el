@@ -71,16 +71,24 @@
   :config
   (counsel-mode +1)
   :chords (("lw" . counsel-M-x)))
-       
+
+;; rg is the emacs interface to ripgrep: a blazing-fast grep
+;; replacement.
 (use-package rg
   :straight t
   :commands rg)
 
+;; ace-window provides a quick way to switch between windows: it
+;; inserts a visible label in the window (by default a number in the
+;; top-left) and you jump to that window by hitting the number. Can be
+;; configured to use other characters (like homerow chars).
 (use-package ace-window
   :straight t
   :chords (("jw" . ace-window))
   :commands (ace-window))
 
+;; hl-todo highlights most occurrences of certain phrases (e.g. TODO,
+;; NOTE, XXX).
 (use-package hl-todo
   :straight t
   :config
