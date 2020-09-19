@@ -81,3 +81,7 @@
   :chords (("jw" . ace-window))
   :commands (ace-window))
 
+(use-package hl-todo
+  :straight t
+  :config
+  (global-hl-todo-mode))
