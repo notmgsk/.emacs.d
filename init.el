@@ -77,10 +77,13 @@
 ;; Some specific config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(timed-load "./lisp/package.el")
+(timed-load "./lisp/env.el")
 (timed-load "./lisp/kb.el")
 (timed-load "./lisp/ui.el")
 (timed-load "./lisp/vc.el")
 (timed-load "./lisp/prog.el")
+(timed-load "./lisp/nix.el")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
