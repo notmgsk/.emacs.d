@@ -11,10 +11,14 @@
 (use-package modus-operandi-theme
   :straight t
   :config
-  (load-theme 'modus-operandi t))
+  (unless (getenv "USE_DARK_THEMES")
+    (load-theme 'modus-operandi t)))
 
 (use-package modus-vivendi-theme
-  :straight t)
+  :straight t
+  :config
+  (when (getenv "USE_DARK_THEMES")
+    (load-theme 'modus-vivendi t)))
 
 (use-package rainbow-mode
   :straight t
