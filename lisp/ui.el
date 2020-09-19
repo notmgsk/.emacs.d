@@ -78,4 +78,6 @@
 
 (use-package ace-window
   :straight t
-  :chords (("jw" . ace-window)))
+  :chords (("jw" . ace-window))
+  :commands (ace-window))
+
