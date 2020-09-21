@@ -63,6 +63,10 @@
 (setq tab-width 4
       indent-tabs-mode nil)
 
+(recentf-mode +1)
+(setq recentf-max-saved-items 200
+      recentf-max-menu-items 20)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Some OS-specific config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
