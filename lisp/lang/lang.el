@@ -13,6 +13,9 @@
   :straight t
   :commands dap-mode)
 
+(use-package indent-guide
+  :straight t)
+
 (timed-load "./lisp.el")
 (timed-load "./python.el")
 (timed-load "./c.el")

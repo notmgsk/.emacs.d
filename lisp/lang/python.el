@@ -1,5 +1,8 @@
 (use-package python
-  :straight t)
+  :straight t
+  :hook ((python-mode . company-mode)
+         (python-mode . electric-pair-mode)
+         (python-mode . indent-guide-mode)))
 
 (use-package pyvenv
   :straight t
