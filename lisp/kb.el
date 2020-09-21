@@ -40,6 +40,7 @@
 
 (use-package simple
   :config
+  (global-unset-key (kbd "C-z"))
   (key-chord-define-global "df" #'undo)
   (key-chord-define-global "jd" #'set-mark-command))
 
