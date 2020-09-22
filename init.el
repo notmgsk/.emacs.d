@@ -63,9 +63,13 @@
 (setq tab-width 4
       indent-tabs-mode nil)
 
+;; recentf keeps a list of recently used files. Very helpful.
 (recentf-mode +1)
 (setq recentf-max-saved-items 200
       recentf-max-menu-items 20)
+;; recentf only saves on a clean exit from emacs. Not so
+;; helpful. Better to save every 60s IMO.
+(run-at-time nil 60 'recentf-save-list)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Some OS-specific config ;;
