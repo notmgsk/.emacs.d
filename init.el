@@ -69,7 +69,9 @@
       recentf-max-menu-items 20)
 ;; recentf only saves on a clean exit from emacs. Not so
 ;; helpful. Better to save every 60s IMO.
-(run-at-time nil 60 'recentf-save-list)
+(run-at-time nil 60 (lambda ()
+                      (let ((save-silently t))
+                        (recentf-save-list))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Some OS-specific config ;;
