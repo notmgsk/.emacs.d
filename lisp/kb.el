@@ -41,6 +41,7 @@
 (use-package simple
   :config
   (global-unset-key (kbd "C-z"))
+  (global-unset-key (kbd "C-x C-c"))
   (key-chord-define-global "df" #'undo)
   (key-chord-define-global "jd" #'set-mark-command))
 
