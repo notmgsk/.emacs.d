@@ -3,7 +3,9 @@
 (use-package eglot
   :straight t
   :config
-  (defun project-root (project) (car (project-roots project))))
+  (defun project-root (project) (car (project-roots project)))
+  (add-to-sl-keymap
+   '(("l" eglot-code-actions))))
 
 (use-package flycheck
   :straight t
