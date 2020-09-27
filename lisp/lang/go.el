@@ -3,7 +3,8 @@
   :straight t
   :init
   (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-  (add-to-list 'exec-path (getenv "GOBIN")))
+  (add-to-list 'exec-path (getenv "GOBIN"))
+  :hook (go-mode . yas-minor-mode))
 
 (use-package gotest
   :straight t
