@@ -16,7 +16,8 @@
   :commands dap-mode)
 
 (use-package indent-guide
-  :straight t)
+  :straight (indent-guide :type git :host github :repo "zk-phi/indent-guide"
+                          :fork (:host github :repo "notmgsk/indent-guide")))
 
 (timed-load "./lisp.el")
 (timed-load "./python.el")
