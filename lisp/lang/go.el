@@ -1,10 +1,13 @@
+;;; go.el Configuration for golang
 
 (use-package go-mode
   :straight t
   :init
   (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
   (add-to-list 'exec-path (getenv "GOBIN"))
-  :hook (go-mode . yas-minor-mode))
+  :hook
+  (go-mode . yas-minor-mode)
+  (go-mode . indent-guide-mode))
 
 (use-package gotest
   :straight t
