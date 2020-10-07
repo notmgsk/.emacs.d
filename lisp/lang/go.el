@@ -7,7 +7,8 @@
   (add-to-list 'exec-path (getenv "GOBIN"))
   :hook
   (go-mode . yas-minor-mode)
-  (go-mode . indent-guide-mode))
+  (go-mode . indent-guide-mode)
+  (go-mode . electric-pair-mode))
 
 (use-package gotest
   :straight t
