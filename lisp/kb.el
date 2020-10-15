@@ -42,6 +42,7 @@
   :config
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-x C-c"))
+  (global-set-key (kbd "C-c i") #'imenu)
   (key-chord-define-global "df" #'undo)
   (key-chord-define-global "jd" #'set-mark-command))
 
