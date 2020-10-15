@@ -8,6 +8,10 @@
 
 (use-package lispy
   :straight t
+  :init
+  ;; No idea why lispy thinks it's useful to insert a space before
+  ;; colons?
+  (setq lispy-colon-p nil)
   ;; Copied from doom
   :hook ((lisp-mode . lispy-mode)
          (emacs-lisp-mode . lispy-mode)
