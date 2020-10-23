@@ -10,7 +10,8 @@
                              (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
   ;; Change the fill-column in org-mode buffers. This has to be done in an
   ;; org-mode hook because fill-column becomes buffer-local whenever set.
-  :hook (org-mode . (lambda () (setq fill-column 80))))
+  :hook (org-mode . (lambda () (setq fill-column 90)))
+  :hook (org-mode . visual-line-mode))
 
 (use-package org-bullets
   :straight t
