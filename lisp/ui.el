@@ -98,3 +98,7 @@
   :straight t
   :commands (fold-this fold-this-sexp))
 
+(use-package expand-region
+  :straight t
+  :commands (er/expand-region)
+  :bind (("C-c m" . er/expand-region)))
