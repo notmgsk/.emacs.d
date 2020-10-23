@@ -93,3 +93,8 @@
   :straight t
   :config
   (global-hl-todo-mode))
+
+(use-package fold-this
+  :straight t
+  :commands (fold-this fold-this-sexp))
+
