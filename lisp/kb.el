@@ -47,4 +47,6 @@
   (key-chord-define-global "jd" #'set-mark-command))
 
 (use-package which-key
-  :straight t)
+  :straight t
+  :config
+  (which-key-mode +1))
