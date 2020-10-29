@@ -8,7 +8,8 @@
   :defer t
   :init
   (add-to-sl-keymap
-   '(("s" magit)))
+   '(("s" magit)
+     ("b" magit-blame)))
   :bind (:map magit-log-mode-map
          :map magit-mode-map
          ;; Checkout the commit-like thing at point, e.g. a git hash.
