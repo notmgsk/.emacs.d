@@ -102,3 +102,10 @@
   :straight t
   :commands (er/expand-region)
   :bind (("C-c m" . er/expand-region)))
+
+(use-package window-purpose
+  :straight t
+  :commands (purpose-toggle-window-buffer-dedicated)
+  :init
+  (add-to-sl-keymap
+   '(("d" purpose-toggle-window-buffer-dedicated))))
