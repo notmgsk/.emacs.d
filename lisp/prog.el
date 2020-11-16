@@ -16,7 +16,6 @@
       (indent-according-to-mode))))
   (company-mode))
 
-
 (use-package yasnippet
   :straight t
   :defer t)
@@ -24,6 +23,10 @@
 (use-package yasnippet-snippets
   :straight t
   :after yasnippet)
+
+(use-package makefile-runner
+  :straight t
+  :commands (makefile-))
 
 (timed-load "./lang/lang.el")
 
