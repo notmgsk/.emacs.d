@@ -23,6 +23,8 @@
          (clojure-mode . lispy-mode)))
 
 (use-package lisp-mode
+  ;; TODO Not sure the below hook is working as desired, in that it
+  ;; does not appear to be buffer-local.
   :hook ((lisp-mode . (lambda ()
                         ;; Clean-up buffers on save (or just before). Weirdly before-save-hook isn't
                         ;; buffer-local by default, meaning it will add stuff to the global
