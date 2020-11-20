@@ -18,6 +18,12 @@
                   (magit-checkout (magit-branch-or-commit-at-point)))))
   :commands magit)
 
+(use-package magit-todos
+  :straight t
+  :after magit
+  :config
+  (magit-todos-mode))
+
 (use-package gist
   :straight t
   :commands (gist-region-or-buffer))
