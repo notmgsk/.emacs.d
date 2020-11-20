@@ -109,3 +109,10 @@
   :init
   (add-to-sl-keymap
    '(("d" purpose-toggle-window-buffer-dedicated))))
+
+(use-package projectile
+  :straight t
+  :commands (projectile-command-map projectile-mode)
+  :init
+  (add-to-sl-keymap
+   '(("p" projectile-command-map))))
