@@ -96,6 +96,7 @@
 (timed-load "./lisp/prog.el")
 (timed-load "./lisp/nix.el")
 (timed-load "./lisp/json.el")
+(timed-load "./lisp/docs.el")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

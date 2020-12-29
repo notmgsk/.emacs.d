@@ -19,7 +19,7 @@
 (use-package pytest
   :straight t
   :commands (pytest-one pytest-all)
-  :config
+  :init
   (add-to-sl-keymap
    ;; TODO Testing is common enough that I should have a key that is
    ;; language-dependent, and will do the right thing. e.g. in
@@ -29,3 +29,7 @@
    ;; options. Fork https://github.com/ionrock/pytest-el?
    '(("t o" pytest-one)
      ("t a" pytest-all))))
+
+(use-package python-docstring
+  :straight t
+  :hook (python-mode . python-docstring-mode))

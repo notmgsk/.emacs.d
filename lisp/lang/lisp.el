@@ -6,6 +6,9 @@
   (setq inferior-lisp-program "sbcl")
   :commands sly)
 
+(use-package sly-quicklisp
+  :straight t)
+
 (use-package lispy
   :straight t
   :init
@@ -31,8 +34,9 @@
                         ;; hook. Sometimes that's what you want, sometimes not. The 'local here is
                         ;; just a non-nil value that forces the hook to be treated as buffer-local.
                         (add-hook 'before-save-hook 'delete-trailing-whitespace nil 'local)
-                        (add-hook 'before-save-hook (lambda ()
-                                                      (let ((current-prefix-arg t))
-                                                        (call-interactively 'untabify)))
-                                  'local)))))
+                        ;; (add-hook 'before-save-hook (lambda ()
+                        ;;                               (let ((current-prefix-arg t))
+                        ;;                                 (call-interactively 'untabify)))
+                        ;;           'local)
+                        ))))
 

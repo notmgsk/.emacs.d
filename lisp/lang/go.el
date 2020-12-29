@@ -12,6 +12,7 @@
 
 (use-package gotest
   :straight t
+  :after go-mode
   :config
   (defun go-run-or-test ()
     (interactive)

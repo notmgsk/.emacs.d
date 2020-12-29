@@ -17,8 +17,7 @@
 (use-package modus-vivendi-theme
   :straight t
   :config
-  (when (getenv "USE_DARK_THEMES")
-    (load-theme 'modus-vivendi t)))
+  (load-theme 'modus-vivendi t))
 
 (use-package rainbow-mode
   :straight t
@@ -50,6 +49,10 @@
 
 ;; Why say many word when few word do trick?
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; Ever get interrupted by a message in the echo area? So
+;; annoying. Usually those come from buffer reverts and auto saves.
+(setq auto-revert-verbose nil)
 
 (use-package ivy
   :straight t
@@ -116,3 +119,19 @@
   :init
   (add-to-sl-keymap
    '(("p" projectile-command-map))))
+
+(use-package zoom-frm
+  :straight t
+  :commands (zoom-frm-in zoom-frm-out)
+  :bind (("C-x C-+" . zoom-frm-in)
+         ("C-x C-0" . zoom-frm-unzoom)
+         ("C-x C--" . zoom-frm-out)))
+
+(use-package ripgrep
+  :straight t
+  :commands (ripgrep-regexp))
+
+(use-package undo-tree
+  :straight t
+  :config (undo-tree-mode +1)
+  :bind (("C-x u" . undo-tree)))

@@ -11,8 +11,8 @@
   (defun add-to-keymap (keymap bindings)
     (dolist (binding bindings)
       (define-key keymap
-    (kbd (cl-first binding))
-    (cl-second binding))))
+        (kbd (cl-first binding))
+        (cl-second binding))))
   
   (defun add-to-dk-keymap (bindings)
     (add-to-keymap dk-keymap bindings))
@@ -31,6 +31,8 @@
      ("t" eshell-here)
      ("/" find-name-dired)
      ("e" balance-windows)))
+  (add-to-sl-keymap '(("c" compile)))
+  (add-to-sl-keymap '(("t t" toggle-truncate-lines)))
   (setq key-chord-two-keys-delay 0.05)
   (key-chord-mode +1))
 
