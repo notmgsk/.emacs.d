@@ -8,7 +8,8 @@
   :hook
   (go-mode . yas-minor-mode)
   (go-mode . indent-guide-mode)
-  (go-mode . electric-pair-mode))
+  (go-mode . electric-pair-mode)
+  (go-mode . (lambda () (setq fill-column 80))))
 
 (use-package gotest
   :straight t
