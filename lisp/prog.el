@@ -36,6 +36,13 @@
    '(("m t" makefile-executor-execute-target)
      ("m l" makefile-executor-execute-last))))
 
+(defun insert-todo-comment ()
+  "Insert at point a TODO comment."
+  (interactive)
+  (insert (format "%sTODO(notmgsk): " comment-start)))
+
+(global-set-key (kbd "C-x c") 'insert-todo-comment)
+
 (timed-load "./lang/lang.el")
 
 
