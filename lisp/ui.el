@@ -134,4 +134,4 @@
 (use-package undo-tree
   :straight t
   :config (undo-tree-mode +1)
-  :bind (("C-x u" . undo-tree)))
+  :bind (("C-x u" . undo-tree-visualize)))
