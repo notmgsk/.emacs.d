@@ -19,7 +19,14 @@
   :straight (indent-guide :type git :host github :repo "zk-phi/indent-guide"
                           :fork (:host github :repo "notmgsk/indent-guide")))
 
+(use-package highlight-indent-guides
+  :straight t
+  :init
+  (setq highlight-indent-guides-method 'character))
+
+
 (timed-load "./lisp.el")
 (timed-load "./python.el")
 (timed-load "./c.el")
 (timed-load "./go.el")
+(timed-load "./rust.el")

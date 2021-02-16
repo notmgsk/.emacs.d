@@ -8,16 +8,19 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 
-(use-package modus-operandi-theme
-  :straight t
-  :config
-  (unless (getenv "USE_DARK_THEMES")
-    (load-theme 'modus-operandi t)))
-
+;; Nice dark theme.
 (use-package modus-vivendi-theme
+  :straight t)
+
+;; Nice light theme.
+(use-package modus-operandi-theme
+  :straight t)
+
+;; Cute purple theme. Kinda low comment contrast though.
+(use-package rebecca-theme
   :straight t
   :config
-  (load-theme 'modus-vivendi t))
+  (load-theme 'rebecca t))
 
 (use-package rainbow-mode
   :straight t
@@ -81,14 +84,37 @@
   :straight t
   :commands rg)
 
+(use-package ivy-posframe
+  :straight t
+  :after ivy
+  :custom
+  (ivy-posframe-border-width 10)
+  :config
+  (ivy-posframe-mode +1))
+
 ;; ace-window provides a quick way to switch between windows: it
 ;; inserts a visible label in the window (by default a number in the
 ;; top-left) and you jump to that window by hitting the number. Can be
 ;; configured to use other characters (like homerow chars).
 (use-package ace-window
-  :straight t
-  :chords (("jw" . ace-window))
+  :init
+  (setq aw-keys '(?a ?s ?d ?f ?j ?k ?l))
+  :straight
+  (ace-window :type git :host github :repo "abo-abo/ace-window"
+              :fork (:host github :repo "notmgsk/ace-window" :branch "feature/posframe"))
+  :chords (("jw" . ace-window)
+           ("kw" . ace-delete-window))
   :commands (ace-window))
+
+;; ace-window-posframe changes how ace-window presents options:
+;; instead of displaying a character in a buffer (literally inserting
+;; a character overlay into the buffer), use posframe to draw an
+;; overlay in the center of the window. Has a few benefits,
+;; particularly in that it provides better configuration and doesn't
+;; affect buffer contents.
+(use-package ace-window-posframe
+  :after ace-window
+  :config (ace-window-posframe-mode 1))
 
 ;; hl-todo highlights most occurrences of certain phrases (e.g. TODO,
 ;; NOTE, XXX).
@@ -135,3 +161,40 @@
   :straight t
   :config (undo-tree-mode +1)
   :bind (("C-x u" . undo-tree-visualize)))
+
+;; (use-package edwina
+;;   :straight t
+;;   :config
+;;   (edwina-mode)
+;;   (edwina-setup-dwm-keys))
+
+(use-package multiple-cursors
+  :straight t
+  :bind (("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))
+
+;; winner-mode is a neat built-in that will keep a history of your
+;; window layouts within a session. You can undo and redo a change to
+;; your layout with C-c <left> and C-c <right> respectively.
+(use-package winner
+  :config
+  (winner-mode))
+
+;; (use-package marginalia
+;;   :straight t)
+
+;; (use-package run-command
+;;   :straight t)
+
+(use-package adaptive-wrap
+  :straight t
+  :defer t
+  :config
+  (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow)))
+
+(use-package linum
+  :straight t
+  :defer t
+  :config
+  (setq linum-format " %4d "))

@@ -9,8 +9,8 @@
      ((zerop (current-column))
       (indent-according-to-mode))
      ((save-excursion
-    (backward-char)
-    (not (looking-at " ")))
+        (backward-char)
+        (not (looking-at " ")))
       (company-complete))
      (t
       (indent-according-to-mode))))
@@ -44,5 +44,3 @@
 (global-set-key (kbd "C-x c") 'insert-todo-comment)
 
 (timed-load "./lang/lang.el")
-
-

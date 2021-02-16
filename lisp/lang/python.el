@@ -2,7 +2,9 @@
   :straight t
   :hook ((python-mode . company-mode)
          (python-mode . electric-pair-mode)
-         (python-mode . indent-guide-mode)))
+         (python-mode . indent-guide-mode)
+         (python-mode . yas-minor-mode)
+         (eglot-managed-mode-hook . (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))))
 
 (use-package pyvenv
   :straight t

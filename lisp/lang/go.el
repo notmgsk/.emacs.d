@@ -7,9 +7,16 @@
   (add-to-list 'exec-path (getenv "GOBIN"))
   :hook
   (go-mode . yas-minor-mode)
-  (go-mode . indent-guide-mode)
+  (go-mode . highlight-indent-guides-mode)
   (go-mode . electric-pair-mode)
-  (go-mode . (lambda () (setq fill-column 80))))
+  (go-mode . (lambda () (setq fill-column 80)))
+  (go-mode . (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+  (go-mode . adaptive-wrap-prefix-mode)
+  (go-mode . visual-line-mode)
+  (go-mode . linum-mode)
+  :bind
+  (:map go-mode-map
+        ("C-h ." . eldoc)))
 
 (use-package gotest
   :straight t
