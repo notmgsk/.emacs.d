@@ -10,12 +10,15 @@
   (add-to-sl-keymap
    '(("s" magit)
      ("b" magit-blame)))
+  :custom
+  (magit-diff-refine-hunk 'all)
+  (magit-diff-refine-ignore-whitespace nil)
   :bind (:map magit-log-mode-map
-         :map magit-mode-map
-         ;; Checkout the commit-like thing at point, e.g. a git hash.
-         ("@" . (lambda ()
-                  (interactive)
-                  (magit-checkout (magit-branch-or-commit-at-point)))))
+              :map magit-mode-map
+              ;; Checkout the commit-like thing at point, e.g. a git hash.
+              ("@" . (lambda ()
+                       (interactive)
+                       (magit-checkout (magit-branch-or-commit-at-point)))))
   :commands magit)
 
 (use-package magit-todos
