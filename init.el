@@ -73,6 +73,12 @@
                       (let ((save-silently t))
                         (recentf-save-list))))
 
+;; Losing your *scratch* hacks is le sad :(
+(use-package persistent-scratch
+  :straight t
+  :config
+  (persistent-scratch-setup-default))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Some OS-specific config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
