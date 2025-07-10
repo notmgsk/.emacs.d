@@ -27,9 +27,9 @@
   :config
   (magit-todos-mode))
 
-(use-package gist
-  :straight t
-  :commands (gist-region-or-buffer))
+;(use-package gist
+;  :straight t
+;  :commands (gist-region-or-buffer))
 
 (use-package git-link
   :straight t

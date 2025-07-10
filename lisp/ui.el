@@ -9,12 +9,12 @@
 (menu-bar-mode -1)
 
 ;; Nice dark theme.
-(use-package modus-vivendi-theme
-  :straight t)
+;(use-package modus-vivendi-theme
+;  :straight t)
 
 ;; Nice light theme.
-(use-package modus-operandi-theme
-  :straight t)
+;(use-package modus-operandi-theme
+;  :straight t)
 
 ;; Cute purple theme. Kinda low comment contrast though.
 (use-package rebecca-theme
@@ -193,8 +193,8 @@
   :config
   (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow)))
 
-(use-package linum
-  :straight t
-  :defer t
-  :config
-  (setq linum-format " %4d "))
+;(use-package linum
+;  :straight t
+;  :defer t
+;  :config
+;  (setq linum-format " %4d "))

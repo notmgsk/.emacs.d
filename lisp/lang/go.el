@@ -2,15 +2,15 @@
 
 (use-package go-mode
   :straight t
-  :init
-  (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-  (add-to-list 'exec-path (getenv "GOBIN"))
+  ;; :init
+  ;; (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
   :hook
+  ;; (add-to-list 'exec-path (getenv "GOBIN"))
   (go-mode . yas-minor-mode)
   (go-mode . highlight-indent-guides-mode)
   (go-mode . electric-pair-mode)
   (go-mode . (lambda () (setq fill-column 80)))
-  (go-mode . (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+  ;; (go-mode . (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
   (go-mode . adaptive-wrap-prefix-mode)
   (go-mode . visual-line-mode)
   (go-mode . linum-mode)
